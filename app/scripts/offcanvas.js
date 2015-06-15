@@ -1,6 +1,8 @@
+'use strict';
+
 $(document).ready(function () {
-  $('.quote-container').css({height: window.screen.height + "px"})	
+  $('.quote-container').css({height: window.screen.height + 'px'});	
   $('[data-toggle="offcanvas"]').click(function () {
-    $('.row-offcanvas').toggleClass('active')
+    $('.row-offcanvas').toggleClass('active');
   });
 });
