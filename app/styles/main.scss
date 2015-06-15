@@ -15,56 +15,63 @@ body {
 }
 
 body,html {
-    padding-bottom: .375em;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 100%
+  overflow: hidden;
+  height: 100%
 }
 
-/* Custom page header */
-.header {
 
-  position: absolute;  
-  top: 0;
-  height: 50px;
-  width: 100%;
-  padding-bottom: 10px;
-  z-index: 9;
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
 
-/* Custom page footer */
-.footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-  background-color: #fff;
-}
+
 
 .content{
-  margin-top: 60px;
-  margin-bottom: 50px;
 
-  .quotes{
-    list-style-type: none;
-    padding-left: 0;
+  /* Custom page header */
+  .header {
 
-    li{
-      border-bottom: 1px solid #ccc;
-      padding-top: 5px;
-      padding-bottom: 5px;
+    position: absolute;  
+    top: 0;
+    height: 50px;
+    width: 100%;
+    padding-bottom: 10px;
+    z-index: 9;
+
+    /* Make the masthead heading the same height as the navigation */
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 40px;
+      padding-bottom: 19px;
     }
+  }
 
+  /* Custom page footer */
+  .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    background-color: #fff;
+  }
+  .quote-container {
+    overflow: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    min-height: 500px;
+
+    .quotes{
+      list-style-type: none;
+      padding-left: 0;
+
+      li{
+        border-bottom: 1px solid #ccc;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+    }
   }
 }
 
@@ -77,23 +84,23 @@ body,html {
  * --------------------------------------------------
  */
 
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all .25s ease-out;
-    -o-transition: all .25s ease-out;
-    transition: all .25s ease-out;
-  }
+ .row-offcanvas {
+  position: relative;
+  -webkit-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
 
-  .row-offcanvas-right {
-    right: 0;
-  }
+.row-offcanvas-right {
+  right: 0;
+}
 
-  .row-offcanvas-left {
-    left: 0;
-  }
+.row-offcanvas-left {
+  left: 0;
+}
 
-  .row-offcanvas-right
-  .sidebar-offcanvas {
+.row-offcanvas-right
+.sidebar-offcanvas {
     right: -50%; /* 6 columns */
   }
 
