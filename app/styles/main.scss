@@ -20,11 +20,22 @@ body,html {
 }
 
 
-
-
-
-
 .content{
+
+  .menu-header{
+    padding: 10px 15px 15px 15px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 50px;
+    border-bottom: 1px solid red;
+  }
+
+  .menu{
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+    line-height: 30px;
+  }
 
   /* Custom page header */
   .header {
