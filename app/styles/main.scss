@@ -23,11 +23,20 @@ body,html {
 .content{
 
   .menu-header{
-    padding: 10px 15px 15px 15px;
+    padding: 5px 15px 0 0;
     font-size: 16px;
     line-height: 20px;
     height: 50px;
     border-bottom: 1px solid red;
+
+    div:first-child{
+      padding-left: 0;
+    }
+
+    img{
+      height: 40px;
+      width : 40px;
+    }
   }
 
   .menu{
@@ -83,6 +92,7 @@ body,html {
       }
 
     }
+    
   }
 }
 
