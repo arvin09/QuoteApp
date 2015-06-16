@@ -20,56 +20,50 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    
-
     <div class="container content">
-    <div class="row row-offcanvas row-offcanvas-left ">
+      <div class="row row-offcanvas row-offcanvas-left ">
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas visible-xs" id="sidebar">
-          <ul class="menu">
-            <li>Link 1</li>
-            <li>Link 2</li>
-            <li>Link 3</li>
-          </ul>
+            <div class="col-xs-12">
+              <div class="menu-header">
+                <div class="col-xs-4"><img ></div>
+                <div class="col-xs-8">Welcome User</div>
+              </div>
+              <div class="menu-container">
+                <ul class="menu">
+                  <li>Link 1</li>
+                  <li>Link 2</li>
+                  <li>Link 3</li>
+                </ul>
+              </div>
+            </div>
         </div>
         <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header row">
-          <div class="col-xs-2 visible-xs">
-            <button type="button" class="navbar-toggle" data-toggle="offcanvas">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button> 
+        <div class="navbar navbar-default" role="navigation">
+          <div class="container">
+            <div class="navbar-header row">
+            <div class="col-xs-2 visible-xs">
+              <button type="button" class="navbar-toggle" data-toggle="offcanvas">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button> 
+              </div>
+              <div class="col-xs-10 col-sm-12" ><a class="navbar-brand" href="#/">Quote's</a></div>
             </div>
-            <div class="col-xs-10 col-sm-12" ><a class="navbar-brand" href="#/">Quote's</a></div>
-
-
           </div>
-
         </div>
       </div>
-    </div>
-        <div class="col-xs-12 col-sm-12 quote-container">
-          <div ng-view=""></div>
-        </div>
-
-        <div class="footer">
-      <div class="container">
-        <p>Copyright @ 2015</p>
+      <div class="col-xs-12 col-sm-12 quote-container">
+        <div ng-view=""></div>
       </div>
+      <div class="footer">
+        <div class="container">
+          <p>Copyright @ 2015</p>
+        </div>
+      </div>
+      </div>    
     </div>
-        
-    </div>
-
-
-    
-    </div>
-
-    
-
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <!--  <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
