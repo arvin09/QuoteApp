@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="quoteAppApp">
+  <body ng-app="quoteApp" >
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -57,22 +57,22 @@
                 <div class="col-xs-9 col-sm-9"><a class="navbar-brand" href="#/">Quote's</a></div>
                 <!-- <div class="col-xs-3 col-sm-3"><img src="images/filter.png"></div> -->
                 <!-- Split button -->
-                <div class="col-xs-3 col-sm-3 fliter-ico">
-                   <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="col-xs-3 col-sm-3 fliter-ico" >
+                   <div class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu" aria-haspopup="true" aria-expanded="false">
                     <span aria-hidden="true"><img src="images/filter.png"></span> 
                   </div>
                   
-                  <ul class="list-group dropdown-menu">
-                    <li class="list-group-item"><h3>Category</h3></li>
-                    <li class="list-group-item"><a href="#/1">Motivation</a></li>
-                    <li class="list-group-item"><a href="#/1">Love</a></li>
-                    <li class="list-group-item"><a href="#/1">Friendship</a></li>
-                    <li class="list-group-item"><a href="#/1">Funny</a></li>
-                    <li class="list-group-item"><a href="#/1">Inspirational</a></li>
-                    <li class="list-group-item"><a href="#/1">Life</a></li>
-                    <li class="list-group-item"><a href="#/1">Birthday</a></li>
-                    <li class="list-group-item"><a href="#/1">Leadership</a></li>
-
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    <li class=""><h3>Category</h3></li>
+                    <li class=""><a href="#/">All</a></li>
+                    <li class=""><a href="#/motivation">Motivation</a></li>
+                    <li class=""><a href="#/love">Love</a></li>
+                    <li class=""><a href="#/friendship">Friendship</a></li>
+                    <li class=""><a href="#/funny">Funny</a></li>
+                    <li class=""><a href="#/inspiration">Inspirational</a></li>
+                    <li class=""><a href="#/life">Life</a></li>
+                    <li class=""><a href="#/birthday">Birthday</a></li>
+                    <li class=""><a href="#/leadership">Leadership</a></li>
                   </ul>
                 </div>
               </div>
@@ -135,7 +135,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/offcanvas.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/about.js"></script>
+    
 
     <!-- endbuild -->
 </body>
