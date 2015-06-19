@@ -62,17 +62,9 @@
                     <span aria-hidden="true"><img src="images/filter.png"></span> 
                   </div>
                   
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                    <li class=""><h3>Category</h3></li>
-                    <li class=""><a href="#/">All</a></li>
-                    <li class=""><a href="#/motivation">Motivation</a></li>
-                    <li class=""><a href="#/love">Love</a></li>
-                    <li class=""><a href="#/friendship">Friendship</a></li>
-                    <li class=""><a href="#/funny">Funny</a></li>
-                    <li class=""><a href="#/inspiration">Inspirational</a></li>
-                    <li class=""><a href="#/life">Life</a></li>
-                    <li class=""><a href="#/birthday">Birthday</a></li>
-                    <li class=""><a href="#/leadership">Leadership</a></li>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu" ng-controller="MenuCtrl" >
+                    <li><h3>Category</h3></li>
+                    <li ng-repeat="menuItem in menuItems"><a ng-href="#/{{menuItem.key}}">{{menuItem.name}}</a></li>
                   </ul>
                 </div>
               </div>
@@ -88,23 +80,6 @@
           <p>Copyright @ 2015</p>
         </div>
       </div>
-      <!-- <div class="popover-box dropdown-menu">
-          <h3>Category</h3>
-          <ul>
-            <li>
-              <h4><a href="#/">Test 1</a></h4>
-            </li>
-            <li>
-              <h4><a href="#/">Test 2</a></h4>
-            </li>
-            <li>
-              <h4><a href="#/">Test 3</a></h4>
-            </li>
-            <li>
-              <h4><a href="#/">Test 4</a></h4>
-            </li>
-          </ul>
-      </div> -->
       </div>    
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -133,10 +108,10 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/offcanvas.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    
+    <script src="scripts/controllers/menu.js"></script>
 
+    
     <!-- endbuild -->
 </body>
 </html>
