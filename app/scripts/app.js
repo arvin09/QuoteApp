@@ -17,7 +17,7 @@ App.config(function ($routeProvider) {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
-    .when('/:type', {
+    .when('/:quoteType', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
@@ -29,3 +29,10 @@ App.config(function ($routeProvider) {
       redirectTo: '/'
     });
 });
+
+App.run([function () {
+  angular.element('.quote-container').css({height: window.screen.height + 'px'}); 
+  angular.element('[data-toggle="offcanvas"]').click(function () {
+    angular.element('.row-offcanvas').toggleClass('active');
+  });
+}]);

@@ -5,11 +5,14 @@
  * @name quoteAppApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the quoteAppApp
+ * Controller of the quoteApp
  */
 var app = angular.module('quoteApp');
  app.controller('MainCtrl', ['$scope','$routeParams',function($scope,$routeParams){
-    $scope.quoteType = $routeParams.type || '';
+    $scope.init = function(){
+      console.log('angular init');
+    };
+    $scope.quoteType = $routeParams.quoteType || '';
     $scope.quotes = [
       {id:1,desc:'Walking with a friend in the dark is better than walking alone in the light.',type:'motivation'},
       {id:2,desc:'The greatest gift of life is friendship, and I have received it.'},
