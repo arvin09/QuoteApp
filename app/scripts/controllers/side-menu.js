@@ -3,6 +3,7 @@ var app = angular.module('quoteApp');
 app.controller('sideMenuCtrl', ['$scope', function ($scope) {
 	$scope.login = false;
 	$scope.userDetails = null;
+	
 	$scope.fblogin = function(){
 		FB.login(function(response) {
 			if (response.authResponse) {
@@ -11,7 +12,8 @@ app.controller('sideMenuCtrl', ['$scope', function ($scope) {
 					
 					$scope.$apply(function(){
 						$scope.login = true;
-						$scope.userDetails = response;	
+						$scope.userDetails = response;
+						$scope.userDetails.profilePic = 'http://graph.facebook.com/'+$scope.userDetails.id+'/picture';	
 					});
 					console.log('login', $scope.login);
 					console.log('Good to see you, ' + response.name + '.');
