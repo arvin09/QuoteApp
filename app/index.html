@@ -23,20 +23,21 @@
     <div class="container content">
       <div class="row row-offcanvas row-offcanvas-left ">
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas visible-xs" id="sidebar">
-            <div class="col-xs-12">
+            <div class="col-xs-12" ng-controller="sideMenuCtrl">
               <div class="menu-header">
                 <div class="col-xs-4"><img src="images/user.png" alt="..." class="img-circle"></div>
-                <div class="col-xs-8">Welcome User</div>
+                <div class="col-xs-8" ng-model="userDetails">Welcome {{userDetails.first_name || 'User'}}</div>
               </div>
-              <div class="menu-container">
+              <div class="menu-container" >
                 <ul class="menu">
-                  <li><a href="#/">Login</a></li>
+                  <li ng-if="!login"><a href="#/" ng-click='fblogin()'>Login</a></li>
                   <li ng-if="login"><a href="#/">Favourites</a></li>
                   <li ng-if="login"><a href="#/">Add Quote</a></li>
                   <li><a href="#/">Help</a></li>
                   <li><a href="#/">About</a></li>
                   <li><a href="#/">Rate App</a></li>
-                  <li ng-if="login"><a href="#/">Sign out</a></li>
+                  <li ng-if="login"><a href="#/" ng-click="fblogout()">Sign out</a></li>
+
                 </ul>
               </div>
             </div>
@@ -82,6 +83,7 @@
       </div>
       </div>    
     </div>
+    <div id="fb-root"></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <!--  <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -109,9 +111,8 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/menu.js"></script>
-
-    
+    <script src="scripts/controllers/menu.js"></script>    
+    <script src="scripts/controllers/side-menu.js"></script>    
     <!-- endbuild -->
 </body>
 </html>

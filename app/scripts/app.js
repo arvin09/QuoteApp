@@ -35,4 +35,27 @@ App.run([function () {
   angular.element('[data-toggle="offcanvas"]').click(function () {
     angular.element('.row-offcanvas').toggleClass('active');
   });
+
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '385777114947643',
+      channelUrl: 'app/channel.html',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = '//connect.facebook.net/en_US/sdk.js';
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
 }]);
+
+
+
+
