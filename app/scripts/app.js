@@ -9,7 +9,7 @@
  * Main module of the application.
  */
  
-var App = angular.module('quoteApp', ['ngCookies','ngResource','ngRoute','ngSanitize','ngTouch']);
+var App = angular.module('quoteApp', ['ngCookies','ngResource','ngRoute','ngSanitize','ngTouch','fbAuth']);
 
 App.config(function ($routeProvider) {
   $routeProvider
@@ -30,20 +30,23 @@ App.config(function ($routeProvider) {
     });
 });
 
-App.run([function () {
+App.run(['$rootScope', '$window', 'srvAuth', function($rootScope, $window, srvAuth) {
+
   angular.element('.quote-container').css({height: window.screen.height + 'px'}); 
   angular.element('[data-toggle="offcanvas"]').click(function () {
     angular.element('.row-offcanvas').toggleClass('active');
   });
 
+  $rootScope.user = {};
 
-  window.fbAsyncInit = function() {
+  $window.fbAsyncInit = function() {
     FB.init({
       appId      : '385777114947643',
-      channelUrl: 'app/channel.html',
+      channelUrl : 'app/channel.html',
       xfbml      : true,
       version    : 'v2.3'
     });
+    srvAuth.watchLoginChange();
   };
 
   (function(d, s, id){
