@@ -12,6 +12,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/zocial.css">
     <!-- endbuild -->
   </head>
   <body ng-app="quoteApp" >
@@ -30,16 +31,32 @@
               </div>
               <div class="menu-container" >
                 <ul class="menu">
-                  <li ng-if="!user.login"><a href="#/" ng-click='fblogin()'>Login</a></li>
+                  <li data-toggle="modal" data-target=".bs-example-modal-sm" ng-if="!user.login"><a href="#/" >Login</a></li>
                   <li ng-if="user.login"><a href="#/">Favourites</a></li>
                   <li ng-if="user.login"><a href="#/">Add Quote</a></li>
                   <li><a href="#/">Help</a></li>
                   <li><a href="#/">About</a></li>
                   <li><a href="#/">Rate App</a></li>
                   <li ng-if="user.login"><a href="#/" ng-click="fblogout()">Sign out</a></li>
-
                 </ul>
               </div>
+              <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Sign in</h4>
+       </div>
+
+       <div class="modal-body modal-body-content">
+            <div ng-click='fblogin()' data-dismiss="modal"><a class="zocial facebook"> Sign in with Facebook</a></div>
+            <div data-dismiss="modal"><a class="zocial googleplus">Sign in with Google+</a></div>
+            <div data-dismiss="modal"><a class="zocial twitter">Sign in with Twitter </a></div>
+       </div>
+
+    </div>
+    </div>
+    </div>
             </div>
         </div>
         <div class="header">
@@ -83,6 +100,9 @@
       </div>
       </div>    
     </div>
+    
+      
+    </div>
     <div id="fb-root"></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <!--  <script>
@@ -104,12 +124,13 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="scripts/services/fb-util.js"></script>     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <script src="scripts/app.js"></script>
-<script src="scripts/services/fb-util.js"></script> 
+    <script src="scripts/app-config.js"></script>
+    <script src="scripts/services/fb-util.js"></script> 
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/menu.js"></script>    
     <script src="scripts/controllers/side-menu.js"></script>    

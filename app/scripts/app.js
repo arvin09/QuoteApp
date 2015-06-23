@@ -30,7 +30,7 @@ App.config(function ($routeProvider) {
     });
 });
 
-App.run(['$rootScope', '$window', 'srvAuth', function($rootScope, $window, srvAuth) {
+App.run(['$rootScope', '$window', 'srvAuth','appConfig', function($rootScope, $window, srvAuth, appConfig) {
 
   angular.element('.quote-container').css({height: window.screen.height + 'px'}); 
   angular.element('[data-toggle="offcanvas"]').click(function () {
@@ -41,10 +41,10 @@ App.run(['$rootScope', '$window', 'srvAuth', function($rootScope, $window, srvAu
 
   $window.fbAsyncInit = function() {
     FB.init({
-      appId      : '385777114947643',
-      channelUrl : 'app/channel.html',
+      appId      : appConfig.APP_ID,
+      channelUrl : appConfig.CHANNEL_URL,
       xfbml      : true,
-      version    : 'v2.3'
+      version    : appConfig.VERSION
     });
     srvAuth.watchLoginChange();
   };
@@ -53,9 +53,9 @@ App.run(['$rootScope', '$window', 'srvAuth', function($rootScope, $window, srvAu
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = '//connect.facebook.net/en_US/sdk.js';
+     js.src = appConfig.SDK_URL;
      fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+   }(document, 'script', appConfig.JSDK));
 
 }]);
 

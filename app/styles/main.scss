@@ -131,6 +131,26 @@ body,html {
   }
 }
 
+.modal-body-content{
+  text-align : center;
+
+  div{
+    margin:15px;
+  }
+
+  a{
+      text-align : left!important;
+      padding: 5px!important;
+  }
+}
+
+.zocial, a.zocial{
+  width : 220px !important;
+  //padding-right:0 !important;
+}
+
+
+
 .navbar-toggle {
   float: left;
 }
