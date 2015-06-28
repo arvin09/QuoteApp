@@ -9,7 +9,7 @@
  * Main module of the application.
  */
  
-var App = angular.module('quoteApp', ['ngCookies','ngResource','ngRoute','ngSanitize','ngTouch','fbAuth']);
+var App = angular.module('quoteApp', ['ngCookies','ngResource','ngRoute','ngSanitize','ngTouch','fbAuth','gplusAuth']);
 
 App.config(function ($routeProvider) {
   $routeProvider
