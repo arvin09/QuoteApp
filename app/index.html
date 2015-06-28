@@ -37,7 +37,7 @@
                   <li><a href="#/">Help</a></li>
                   <li><a href="#/">About</a></li>
                   <li><a href="#/">Rate App</a></li>
-                  <li ng-if="user.login"><a href="#/" ng-click="fblogout()">Sign out</a></li>
+                  <li ng-if="user.login"><a href="#/" ng-click="logout()">Sign out</a></li>
                 </ul>
               </div>
               <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
@@ -50,7 +50,7 @@
 
        <div class="modal-body modal-body-content">
             <div ng-click='fblogin()' data-dismiss="modal"><a class="zocial facebook"> Sign in with Facebook</a></div>
-            <div data-dismiss="modal"><a class="zocial googleplus">Sign in with Google+</a></div>
+            <div ng-click='gplusLogin()' data-dismiss="modal"><a class="zocial googleplus">Sign in with Google+</a></div>
             <div data-dismiss="modal"><a class="zocial twitter">Sign in with Twitter </a></div>
        </div>
 
@@ -117,6 +117,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="https://apis.google.com/js/client.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
@@ -131,6 +132,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/app-config.js"></script>
     <script src="scripts/services/fb-util.js"></script> 
+    <script src="scripts/services/gplus-util.js"></script> 
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/menu.js"></script>    
     <script src="scripts/controllers/side-menu.js"></script>    
