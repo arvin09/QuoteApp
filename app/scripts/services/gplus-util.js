@@ -17,13 +17,14 @@ app.factory('gplusUtil', ['$rootScope',function ($rootScope){
 		       'userId': 'me'
 		     });
 		     request.execute(function(response) {
-		       console.log('Retrieved profile for:', response);
+		       //console.log('Retrieved profile for:', response);
 		       $rootScope.$apply(function() {
                 $rootScope.user = response;
                 $rootScope.user.first_name = response.name.givenName;
                 $rootScope.user.login = true;
                 $rootScope.user.profilePic = response.image.url;
-                console.info($rootScope.user);
+                localStorage.setItem('user',JSON.stringify($rootScope.user));
+                //console.info($rootScope.user);
               });
 		     });
 		    });
@@ -31,7 +32,9 @@ app.factory('gplusUtil', ['$rootScope',function ($rootScope){
 	};
 
 	gplus.logout = function(){
-	    $rootScope.user = {};   
+	    $rootScope.user = {};  
+	    localStorage.removeItem('user'); 
+	    console.log("logout");
 	};
 
 	return gplus;
