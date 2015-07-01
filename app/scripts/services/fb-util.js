@@ -20,7 +20,8 @@ app.factory('srvAuth', ['$rootScope',function($rootScope) {
                 $rootScope.user = _self.user = res;
                 $rootScope.user.login = _self.user.login = true;
                 $rootScope.user.profilePic = _self.user.profilePic = 'http://graph.facebook.com/'+res.id+'/picture'; 
-                console.info($rootScope.user);
+                localStorage.setItem('user',JSON.stringify($rootScope.user));
+                //console.info($rootScope.user);
               });
             });
           } else {
@@ -34,6 +35,7 @@ app.factory('srvAuth', ['$rootScope',function($rootScope) {
         FB.logout(function(response) {
           $rootScope.$apply(function() {
             $rootScope.user = _self.user = {};
+            localStorage.removeItem('user');
           });
           console.info(response);
         });

@@ -37,7 +37,14 @@ App.run(['$rootScope', '$window', 'srvAuth','appConfig', function($rootScope, $w
     angular.element('.row-offcanvas').toggleClass('active');
   });
 
-  $rootScope.user = {};
+  if(localStorage.getItem('user')){
+    $rootScope.user = JSON.parse(localStorage.getItem('user'));
+  }else{
+    $rootScope.user = {};
+  }
+
+
+  
 
   $window.fbAsyncInit = function() {
     FB.init({
