@@ -3,32 +3,33 @@ var app = angular.module('fbAuth',[]);
 app.factory('srvAuth', ['$rootScope',function($rootScope) {
       var srvAuth = {};
       srvAuth.fblogin = function() {
-        FB.login(function (response) {
-          if (response.status === 'connected') {
-            // You can now do what you want with the data fb gave you.
-            console.info(response);
-          }
-        });        
+        FB.login();        
       };
 
       srvAuth.watchLoginChange = function() {
+        FB.getLoginStatus(function(response) {
+          srvAuth.isLoggedIn(response);
+        });
+
+        FB.Event.subscribe('auth.statusChange', function(response){
+           srvAuth.isLoggedIn(response);
+        });
+      };
+
+      srvAuth.isLoggedIn = function(response){
         var _self = this;
-        FB.Event.subscribe('auth.authResponseChange', function(res) {
-          if (res.status === 'connected') {
-            FB.api('/me', function(res) {
+         if (response.status === 'connected') {
+            FB.api('/me', function(response) {
               $rootScope.$apply(function() {
                 $rootScope.socialApi = 'facebook';
-                $rootScope.user = _self.user = res;
+                $rootScope.user = _self.user = response;
                 $rootScope.user.login = _self.user.login = true;
-                $rootScope.user.profilePic = _self.user.profilePic = 'http://graph.facebook.com/'+res.id+'/picture'; 
-                //sessionStorage.setItem('user',JSON.stringify($rootScope.user));
-                //console.info($rootScope.user);
+                $rootScope.user.profilePic = _self.user.profilePic = 'http://graph.facebook.com/'+response.id+'/picture';
               });
             });
-          } else {
-            console.log('Not Connected');
-          }
-        });
+          }else{
+            console.log("Not Connected");
+          }  
       };
 
       srvAuth.logout = function() {
@@ -36,7 +37,6 @@ app.factory('srvAuth', ['$rootScope',function($rootScope) {
         FB.logout(function(response) {
           $rootScope.$apply(function() {
             $rootScope.user = _self.user = {};
-            //sessionStorage.removeItem('user');
           });
           console.info(response);
         });
