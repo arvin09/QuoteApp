@@ -3,38 +3,52 @@ var app = angular.module('gplusAuth',[]);
 
 app.factory('gplusUtil', ['$rootScope',function ($rootScope){
 	var gplus = {};
-	var config = {
-          'client_id': '696470903530-hd0ffdiqvrpfqvnkhoi6an077db8qd3k.apps.googleusercontent.com',
-          'cookie_policy' : 'single_host_origin',
-          'scope': 'https://www.googleapis.com/auth/plus.login'
-    };
+	var auth2 = {};
     
 	gplus.login = function(){
-		gapi.auth.authorize(config, function() {
-		  console.log(gapi.auth.getToken());
-          gapi.client.load('plus','v1', function(){
-		     var request = gapi.client.plus.people.get({
-		       'userId': 'me'
-		     });
-		     request.execute(function(response) {
-		       //console.log('Retrieved profile for:', response);
-		       $rootScope.$apply(function() {
-                $rootScope.user = response;
-                $rootScope.user.first_name = response.name.givenName;
-                $rootScope.user.login = true;
-                $rootScope.user.profilePic = response.image.url;
-                sessionStorage.setItem('user',JSON.stringify($rootScope.user));
-                //console.info($rootScope.user);
-              });
-		     });
-		    });
-        });
+		auth2 = gapi.auth2.getAuthInstance();
+		auth2.signIn();
 	};
 
+	gplus.watchSignInChange = function(){
+		auth2 = gapi.auth2.getAuthInstance();
+		auth2.isSignedIn.listen(function(isAuthenticated){
+			if(isAuthenticated){
+				gapi.client.load('plus','v1', function(){
+			     var request = gapi.client.plus.people.get({
+			       'userId': 'me'
+			     });
+			     request.execute(function(response) {
+			       //console.log('Retrieved profile for:', response);
+			       $rootScope.$apply(function() {
+			       	$rootScope.socialApi = 'gplus';
+	                $rootScope.user = response;
+	                $rootScope.user.first_name = response.name.givenName;
+	                $rootScope.user.login = true;
+	                $rootScope.user.profilePic = response.image.url;
+	                //sessionStorage.setItem('user',JSON.stringify($rootScope.user));
+	                //console.info($rootScope.user);
+	              });
+			     });
+			    });
+			}
+		});
+	};
+
+	
+
 	gplus.logout = function(){
-	    $rootScope.user = {};  
-	    sessionStorage.removeItem('user'); 
-	    console.log('logout');
+
+		auth2 = gapi.auth2.getAuthInstance();
+		console.log(auth2);
+	    auth2.signOut().then(function(){
+		    $rootScope.$apply(function() {
+		    	$rootScope.user = {}; 
+		    	console.log('logout');
+		    });
+	    }); 
+	    //sessionStorage.removeItem('user'); 
+	    
 	};
 
 	return gplus;
