@@ -1,6 +1,6 @@
 'use strict';
 var app = angular.module('quoteApp');
-app.controller('sideMenuCtrl', ['$scope','srvAuth','gplusUtil', function ($scope,srvAuth,gplusUtil) { 
+app.controller('SideMenuCtrl', ['$scope','srvAuth','gplusUtil', function ($scope,srvAuth,gplusUtil) { 
 	
 	$scope.fblogin = function(){
 		srvAuth.fblogin();

@@ -23,7 +23,7 @@ app.factory('gplusUtil', ['$rootScope',function ($rootScope){
                 $rootScope.user.first_name = response.name.givenName;
                 $rootScope.user.login = true;
                 $rootScope.user.profilePic = response.image.url;
-                localStorage.setItem('user',JSON.stringify($rootScope.user));
+                sessionStorage.setItem('user',JSON.stringify($rootScope.user));
                 //console.info($rootScope.user);
               });
 		     });
@@ -33,8 +33,8 @@ app.factory('gplusUtil', ['$rootScope',function ($rootScope){
 
 	gplus.logout = function(){
 	    $rootScope.user = {};  
-	    localStorage.removeItem('user'); 
-	    console.log("logout");
+	    sessionStorage.removeItem('user'); 
+	    console.log('logout');
 	};
 
 	return gplus;
