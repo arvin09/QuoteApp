@@ -17,10 +17,11 @@ app.factory('srvAuth', ['$rootScope',function($rootScope) {
           if (res.status === 'connected') {
             FB.api('/me', function(res) {
               $rootScope.$apply(function() {
+                $rootScope.socialApi = 'facebook';
                 $rootScope.user = _self.user = res;
                 $rootScope.user.login = _self.user.login = true;
                 $rootScope.user.profilePic = _self.user.profilePic = 'http://graph.facebook.com/'+res.id+'/picture'; 
-                sessionStorage.setItem('user',JSON.stringify($rootScope.user));
+                //sessionStorage.setItem('user',JSON.stringify($rootScope.user));
                 //console.info($rootScope.user);
               });
             });
@@ -35,7 +36,7 @@ app.factory('srvAuth', ['$rootScope',function($rootScope) {
         FB.logout(function(response) {
           $rootScope.$apply(function() {
             $rootScope.user = _self.user = {};
-            sessionStorage.removeItem('user');
+            //sessionStorage.removeItem('user');
           });
           console.info(response);
         });
