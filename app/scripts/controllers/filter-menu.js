@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('quoteApp');
-app.controller('MenuCtrl', ['$scope', function ($scope) {
+app.controller('FilterMenuCtrl', ['$scope', function ($scope) {
 	$scope.menuItems = [
 		{id:1,name:'All',key:''},
 		{id:2,name:'Motivation',key:'motivation'},

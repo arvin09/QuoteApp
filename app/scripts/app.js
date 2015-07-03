@@ -30,28 +30,40 @@ App.config(function ($routeProvider) {
     });
 });
 
-App.run(['$rootScope', '$window', 'srvAuth','appConfig', function($rootScope, $window, srvAuth, appConfig) {
+App.run(['$rootScope', '$window', 'srvAuth','gplusUtil','appConfig', function($rootScope, $window, srvAuth, gplusUtil, appConfig) {
 
   angular.element('.quote-container').css({height: window.screen.height + 'px'}); 
   angular.element('[data-toggle="offcanvas"]').click(function () {
     angular.element('.row-offcanvas').toggleClass('active');
   });
 
-  if(localStorage.getItem('user')){
-    $rootScope.user = JSON.parse(localStorage.getItem('user'));
-  }else{
+  // if(sessionStorage.getItem('user')){
+  //   $rootScope.user = JSON.parse(sessionStorage.getItem('user'));
+  // }else{
     $rootScope.user = {};
-  }
+  // }
 
+  (function(){
+    console.log('GPLUS');
+    gapi.load('auth2',function(){
+      gapi.auth2.init({
+          'client_id': appConfig.GOOGLE.CLIENT_ID,
+          'cookie_policy' : appConfig.GOOGLE.COOKIE_POLICY,
+          'scope': appConfig.GOOGLE.SCOPE
+      });
 
-  
+      gplusUtil.watchSignInChange();
+      
+    });
+
+  })();
 
   $window.fbAsyncInit = function() {
     FB.init({
-      appId      : appConfig.APP_ID,
-      channelUrl : appConfig.CHANNEL_URL,
+      appId      : appConfig.FACEBOOK.APP_ID,
+      channelUrl : appConfig.FACEBOOK.CHANNEL_URL,
       xfbml      : true,
-      version    : appConfig.VERSION
+      version    : appConfig.FACEBOOK.VERSION
     });
     srvAuth.watchLoginChange();
   };
@@ -60,9 +72,9 @@ App.run(['$rootScope', '$window', 'srvAuth','appConfig', function($rootScope, $w
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = appConfig.SDK_URL;
+     js.src = appConfig.FACEBOOK.SDK_URL;
      fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', appConfig.JSDK));
+   }(document, 'script', appConfig.FACEBOOK.JSDK));
 
 }]);
 
