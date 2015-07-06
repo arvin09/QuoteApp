@@ -25,6 +25,8 @@ body,html {
   overflow: auto;
   border-radius: 10px;
   width: 300px;
+  right: 0;
+  left: inherit;
 
   h3{
     line-height: 25px !important;
