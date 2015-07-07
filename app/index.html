@@ -31,12 +31,13 @@
               </div>
               <div class="menu-container" >
                 <ul class="menu">
-                  <li data-toggle="modal" data-target=".bs-example-modal-sm" ng-if="!user.login"><a href="#/" >Login</a></li>
+                  <li><a href="#/">Home</a></li>
+                  <li data-toggle="modal" data-target=".bs-example-modal-sm" ng-if="!user.login"><a href="" >Login</a></li>
                   <li ng-if="user.login"><a href="#/">Favourites</a></li>
                   <li ng-if="user.login"><a href="#/">Add Quote</a></li>
-                  <li><a href="#/">Help</a></li>
-                  <li><a href="#/">About</a></li>
-                  <li><a href="#/">Rate App</a></li>
+                  <li><a href="#/page/help">Help</a></li>
+                  <li><a href="#/page/about">About</a></li>
+                  <li><a href="#/page/rating">Rate App</a></li>
                   <li ng-if="user.login"><a href="#/" ng-click="logout()">Sign out</a></li>
                 </ul>
               </div>
@@ -133,12 +134,17 @@
      <!-- endbuild -->
 
      <script src="scripts/app.js"></script>
-     <script src="scripts/app-config.js"></script>
+     <script src="scripts/app-const.js"></script>
+     <script src="scripts/services/social-config.js"></script>
      <script src="scripts/services/fb-util.js"></script> 
      <script src="scripts/services/gplus-util.js"></script> 
      <script src="scripts/controllers/main.js"></script>
      <script src="scripts/controllers/filter-menu.js"></script>    
-     <script src="scripts/controllers/side-menu.js"></script>    
+     <script src="scripts/controllers/side-menu.js"></script>
+     <script src="scripts/controllers/about.js"></script>
+     <script src="scripts/controllers/help.js"></script>
+     <script src="scripts/controllers/rating.js"></script>  
+       
 
      <!-- endbuild -->
    </body>

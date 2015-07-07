@@ -1,19 +1,18 @@
 'use strict';
 var app = angular.module('quoteApp');
-app.controller('SideMenuCtrl', ['$scope','srvAuth','gplusUtil','$rootScope', function ($scope,srvAuth,gplusUtil,$rootScope) { 
+app.controller('SideMenuCtrl', ['$scope','fbUtil','gplusUtil','$rootScope', function ($scope,fbUtil,gplusUtil,$rootScope) { 
 	
 	$scope.fblogin = function(){
-		srvAuth.fblogin();
+		fbUtil.fblogin();
 		$rootScope.socialApi = 'facebook';
 	};
 
 	$scope.logout = function(){
 		if($rootScope.socialApi === 'facebook'){
-			srvAuth.logout();
+			fbUtil.logout();
 		}else if($rootScope.socialApi === 'gplus'){
 			gplusUtil.logout();
 		}
-
 	};
 
 	$scope.gplusLogin = function(){
