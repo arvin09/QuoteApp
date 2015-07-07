@@ -1,5 +1,6 @@
+'use strict';
 var app = angular.module('quoteApp');
-app.constant('appConfig', { 
+app.constant('appConstants', { 
 	FACEBOOK : {
 		APP_ID : '385777114947643',
 		CHANNEL_URL : 'app/channel.html',
@@ -14,4 +15,5 @@ app.constant('appConfig', {
 		SCOPE : 'https://www.googleapis.com/auth/plus.login' 	
 	}
 });
+
 
