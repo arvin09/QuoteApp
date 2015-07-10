@@ -38,9 +38,11 @@ App.config(function ($routeProvider) {
     });
 });
 
-App.run(['$rootScope','SocialConfig', function($rootScope,SocilaConfig) {
 
-  angular.element('.quote-container').css({height: window.screen.height + 'px', 'background-color':'#0079BF'}); 
+
+App.run(['$rootScope','$window','SocialConfig', function($rootScope,$window,SocilaConfig) {
+  angular.element('.quote-container').css({height: $($window).height() + 'px', 'background-color':'#0079BF'});
+  
   angular.element('.footer').css({position: 'absolute'}); 
   angular.element('[data-toggle="offcanvas"]').click(function () {
     angular.element('.row-offcanvas').toggleClass('active');
