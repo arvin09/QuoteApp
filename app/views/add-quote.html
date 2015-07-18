@@ -1,0 +1,26 @@
+<form novalidate name="frmAddQuote">
+  <div class="form-header">
+  	<h4>Add Quote</h4>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <textarea class="form-control" ng-model="quote.description"required placeholder="Enter Quote Description here"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Author</label>
+    <input type="text" class="form-control" ng-model="quote.author" id="exampleInputPassword1" placeholder="Author" required>
+  </div>
+
+  
+  <div class="form-group" ng-controller="FilterMenuCtrl">
+    <label for="exampleInputPassword2">Type</label>
+	<select class="form-control" ng-model="quote.type" required ng-controller="FilterMenuCtrl">
+	  <option value="">Select Type</option>
+	  <option  ng-repeat="menuItem in menuItems" ng-value="menuItem.key" ng-if="menuItem.key!=''">{{menuItem.key}}</option>
+  	</select>
+  </div>
+  
+  <button type="submit" ng-disabled="frmAddQuote.$invalid" ng-click="formSubmit()" class="btn btn-default">Submit</button>
+  <button  ng-click="formReset()" class="btn btn-default">Reset</button>
+</form>
