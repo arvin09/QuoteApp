@@ -34,8 +34,8 @@
                 <ul class="menu">
                   <li><a href="#/">Home</a></li>
                   <li data-toggle="modal" data-target=".bs-example-modal-sm" ng-if="!user.login"><a href="" >Login</a></li>
-                  <li ng-if="user.login"><a href="#/">Favourites</a></li>
-                  <li ng-if="user.login"><a href="#/">Add Quote</a></li>
+                  <li ng-if="user.login"><a href="#/">My Favourites</a></li>
+                  <li ng-if="user.login"><a href="#/page/addQuote">Add Quote</a></li>
                   <li><a href="#/page/help">Help</a></li>
                   <li><a href="#/page/about">About</a></li>
                   <li><a href="#/page/rating">Rate App</a></li>
@@ -146,6 +146,7 @@
      <script src="scripts/controllers/about.js"></script>
      <script src="scripts/controllers/help.js"></script>
      <script src="scripts/controllers/rating.js"></script>
+     <script src="scripts/controllers/add-quote.js"></script>
      <!-- endbuild -->  
        
 

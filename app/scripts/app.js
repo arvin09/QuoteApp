@@ -21,6 +21,10 @@ App.config(function ($routeProvider) {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
+    .when('/page/addQuote', {
+      templateUrl: 'views/add-quote.html',
+      controller: 'AddQuoteController'
+    })
     .when('/page/about', {
       templateUrl: 'views/about.html',
       controller: 'AboutCtrl'
