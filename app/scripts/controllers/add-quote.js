@@ -1,7 +1,7 @@
 var app = angular.module('quoteApp');
-app.controller('AddQuoteController', ['$scope','$window', function ($scope,$window) {
+app.controller('AddQuoteController', ['$scope','$window','$rootScope', function ($scope,$window,$rootScope) {
 	$scope.quote = {};
-
+	$rootScope.quoteFilter = false;	
 	 var oriQuote = angular.copy($scope.quote);
 
 	$scope.formSubmit = function(){

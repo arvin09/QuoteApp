@@ -8,10 +8,11 @@
  * Controller of the quoteApp
  */
 var app = angular.module('quoteApp');
- app.controller('MainCtrl', ['$scope','$routeParams',function($scope,$routeParams){
+ app.controller('MainCtrl', ['$scope','$routeParams','$rootScope',function($scope,$routeParams,$rootScope){
     $scope.init = function(){
       console.log('angular init');
     };
+    $rootScope.quoteFilter = true;
     $scope.quoteType = $routeParams.quoteType || '';
     $scope.quotes = [
       {id:1,desc:'Walking with a friend in the dark is better than walking alone in the light.',type:'motivation'},
