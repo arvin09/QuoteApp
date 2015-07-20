@@ -1,3 +1,4 @@
+'use strict';
 var app = angular.module('quoteApp');
 app.controller('AddQuoteController', ['$scope','$window','$rootScope', function ($scope,$window,$rootScope) {
 	$scope.quote = {};
@@ -11,5 +12,5 @@ app.controller('AddQuoteController', ['$scope','$window','$rootScope', function 
 	$scope.formReset = function(){
 		$scope.quote = angular.copy(oriQuote);
 		$scope.frmAddQuote.$setPristine();
-	}
-}])
+	};
+}]);

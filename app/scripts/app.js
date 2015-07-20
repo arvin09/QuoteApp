@@ -33,10 +33,6 @@ App.config(function ($routeProvider) {
       templateUrl: 'views/help.html',
       controller: 'HelpCtrl'
     })
-    .when('/page/rating', {
-      templateUrl: 'views/rating.html',
-      controller: 'RatingCtrl'
-    })
     .otherwise({
       redirectTo: '/'
     });
