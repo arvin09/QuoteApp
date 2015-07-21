@@ -45,17 +45,11 @@
               </div>
 
 
-              <div class="modal fade rate-app-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                 <div class="modal-dialog modal-sm">
                   <div class="modal-content">
                    <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="gridSystemModalLabel">Rate this  App</h4>
                   </div>
-
-                  <div class="modal-body modal-body-content">
-                    
-                    Rate this app
 
                   </div>
 
@@ -63,73 +57,24 @@
               </div>
             </div>
 
-            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                <div class="modal-dialog modal-sm">
-                  <div class="modal-content">
-                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="gridSystemModalLabel">Sign in</h4>
-                  </div>
-
-                  <div class="modal-body modal-body-content">
-                    <div ng-click='fblogin()' data-dismiss="modal"><a class="zocial facebook"> Sign in with Facebook</a></div>
-                    <div ng-click='gplusLogin()' data-dismiss="modal"><a class="zocial googleplus">Sign in with Google+</a></div>
-                    <div data-dismiss="modal"><a class="zocial twitter">Sign in with Twitter </a></div>
-                  </div>
 
                 </div>
               </div>
             </div>
 
-            
 
 
 
-          </div>
+
         </div>
-        <div class="header">
-          <div class="navbar navbar-default" role="navigation">
-            <div class="container">
-              <div class="navbar-header row">
-                <div class="col-xs-2 visible-xs">
-                  <button type="button" class="navbar-toggle" data-toggle="offcanvas">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button> 
-                </div>
-                <div class="col-xs-10 col-sm-12" >
-                  <div class="col-xs-9 col-sm-9"><a class="navbar-brand" href="#/">Quote's</a></div>
-                  <!-- <div class="col-xs-3 col-sm-3"><img src="images/filter.png"></div> -->
-                  <!-- Split button -->
-                  <div class="col-xs-3 col-sm-3 fliter-ico" >
-                   <div class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu" aria-haspopup="true" aria-expanded="false">
-                    <span aria-hidden="true" ng-show="quoteFilter"><img src="images/filter.png"></span> 
-                  </div>
-                  
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu" ng-controller="FilterMenuCtrl" >
-                    <li><h3>Category</h3></li>
-                    <li ng-repeat="menuItem in menuItems"><a ng-href="#/{{menuItem.key}}">{{menuItem.name}}</a></li>
-                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-12 quote-container">
-        <div ng-view=""></div>
       </div>
-      <div class="footer">
-        <div class="container">
-          <p>Copyright @ 2015</p>
-        </div>
       </div>
-    </div>    
-  </div>
-  
-  
 </div>
 <div id="fb-root"></div>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -160,7 +105,6 @@
 
      <!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/appcore.js -->
      <script src="scripts/app.js"></script>
      <script src="scripts/app-const.js"></script>
      <script src="scripts/services/social-config.js"></script>
@@ -174,7 +118,6 @@
      <script src="scripts/controllers/rating.js"></script>
      <script src="scripts/controllers/add-quote.js"></script>
      <!-- endbuild -->  
-       
 
      <!-- endbuild -->
    </body>

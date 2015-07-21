@@ -19,6 +19,38 @@ body,html {
   height: 100%
 }
 
+
+
+.modal-vcenter {
+  padding-top: 30% !important;
+}
+
+.rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;  
+  
+  li {
+    padding: 1px;
+    color: #ddd;
+    font-size: 20px;
+    text-shadow: .05em .05em #aaa;
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
+    &.filled {
+      color: #fd0; //#21568b
+    }
+
+    .rating-star{
+      font-size: 40px !important;
+    }
+  }
+  &.readonly li.filled {
+    color: #666;
+  }
+}
+
 .dropdown-menu{
   float: right;
   height: 300px;
