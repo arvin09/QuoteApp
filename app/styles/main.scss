@@ -19,8 +19,6 @@ body,html {
   height: 100%
 }
 
-
-
 .modal-vcenter {
   padding-top: 30% !important;
 }
@@ -157,13 +155,10 @@ form{
     padding-bottom: 10px;
     z-index: 9;
 
-    .fliter-ico{
-      padding: 0;
-    }
-
-    img{
-      float: right;
+    .filter-ico{
+      font-size: 35px !important;
       padding-top: 10px;
+      padding-left: 20px;
     }
 
     /* Make the masthead heading the same height as the navigation */
