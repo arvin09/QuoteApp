@@ -1,6 +1,8 @@
 'use strict';
 var app = angular.module('quoteApp');
-app.controller('RatingCtrl', ['$scope','$rootScope', function ($scope,$rootScope) {
-	$rootScope.quoteFilter = false;
-	$scope.rating = 'rating';
+app.controller('RatingCtrl', ['$scope', function ($scope) {
+	$scope.rating = 3;
+  	$scope.rateFunction = function(rating) {
+    	console.log('Rating selected: ' + rating);
+  	};
 }]);
