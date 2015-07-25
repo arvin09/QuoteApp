@@ -55,7 +55,7 @@ body,html {
   overflow: auto;
   border-radius: 10px;
   width: 300px;
-  right: 0;
+  right: -6px;
   left: inherit;
 
   h3{
@@ -65,12 +65,11 @@ body,html {
     border-bottom: 2px solid;
   }
 
-  
-    a{
-      padding:10px!important;
-      font-size: 16px;
-      font-weight: 400;
-    }
+  a{
+    padding:10px!important;
+    font-size: 16px;
+    font-weight: 400;
+  }
   
 }
 
@@ -155,10 +154,9 @@ form{
     padding-bottom: 10px;
     z-index: 9;
 
-    .filter-ico{
-      font-size: 35px !important;
+    img{
       padding-top: 10px;
-      padding-left: 20px;
+      padding-left: 15px;
     }
 
     /* Make the masthead heading the same height as the navigation */
