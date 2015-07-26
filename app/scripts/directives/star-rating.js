@@ -13,7 +13,7 @@ app.directive('starRating', function() {
       onRatingSelected : '&?',
       readonly: '=?'
     },
-    link : function(scope, elem, attrs) {
+    link : function(scope) {
       if (scope.max === undefined) { scope.max = 5; }
       function updateStars() {
         scope.stars = [];
