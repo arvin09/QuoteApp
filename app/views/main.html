@@ -5,7 +5,7 @@
 				{{quote.desc}}
 			</div>
 		</div>
-		<div ng-if="user.login" class="quote-menu"><span class="glyphicon glyphicon glyphicon-star-empty" aria-hidden="true"></span></div>
+		<div ng-if="user.login" class="quote-menu"><set-favourite is-fav="false" on="heart glyphicon-heart" off="heart-empty glyphicon-heart-empty"/></div>
 	</div>
 </div>
 
@@ -14,7 +14,7 @@
       <div class="modal-content">
        <div class="modal-header" ng-if="user.login">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel"><span class="glyphicon glyphicon glyphicon-star-empty" aria-hidden="true"></span> </h4>
+        <h4 class="modal-title" id="gridSystemModalLabel"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span> </h4>
       </div>
       <div class="modal-body modal-body-content">
         {{currentSelectedQuote.desc}}
