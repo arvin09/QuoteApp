@@ -13,7 +13,6 @@ var app = angular.module('quoteApp');
       console.log('angular init');
     };
     $rootScope.quoteFilter = true;
-    
     $scope.quoteType = $routeParams.quoteType || '';
     $scope.quotes = [
       {id:1,desc:'Walking with a friend in the dark is better than walking alone in the light.',type:'motivation'},
@@ -32,5 +31,6 @@ var app = angular.module('quoteApp');
 
     $scope.showDetails = function(quote){
       $scope.currentSelectedQuote = quote;
-    }
+    };
+
   }]);
