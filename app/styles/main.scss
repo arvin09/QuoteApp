@@ -3,6 +3,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$font-size: 14px;
+$line-height: 1.4;
+$lines-to-show: 3;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -185,8 +189,9 @@ form{
     position: relative;
 
     .quotes{
-      list-style-type: none;
-      padding-left: 0;
+       list-style-type: none;
+       padding-left: 0;
+
 
       li{
         border-bottom: 1px solid #ccc;
@@ -195,8 +200,34 @@ form{
       }
 
     }
+
+    .quote-menu{
+      float:right;
+      //padding-right:10px;
+      img{
+        width : 20px;
+        height: 20px;
+        vertical-align: inherit;
+      }
+
+    }
     
   }
+}
+
+.panel-body{
+  display: block; /* Fallback for non-webkit */
+display: -webkit-box;
+max-width: 100%;
+height: 75px;//$font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+margin: 0 auto;
+font-size: $font-size;
+line-height: $line-height;
+-webkit-line-clamp: $lines-to-show;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+  margin-bottom: 10px;
 }
 
 .modal-body-content{
@@ -211,6 +242,8 @@ form{
       padding: 5px!important;
   }
 }
+
+
 
 .zocial, a.zocial{
   width : 220px !important;
