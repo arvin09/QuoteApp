@@ -31,6 +31,7 @@ var app = angular.module('quoteApp');
 
     $scope.showDetails = function(quote){
       $scope.currentSelectedQuote = quote;
+      angular.element('.currentQuote-app-modal-sm').modal('show') 
     };
 
   }]);

@@ -1,7 +1,7 @@
-<div class="panel panel-default" ng-repeat= "quote in quotes | filter:{type : quoteType}"	>
+<div class="panel panel-default" ng-repeat= "quote in quotes | filter:{type : quoteType}">
 	<div class="container">
 		<div class="row">
-			<div class="panel-body" ng-click="showDetails(quote)" data-toggle="modal" data-target=".currentQuote-app-modal-sm">
+			<div class="panel-body" ng-click="showDetails(quote)">
 				{{quote.desc}}
 			</div>
 		</div>

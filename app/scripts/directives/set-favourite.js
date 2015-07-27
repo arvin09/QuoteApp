@@ -10,19 +10,10 @@ app.directive('setFavourite', function(){
     },
     restrict: 'E',
     replace: true,
-    template: '<span class="glyphicon {{valstr}}" aria-hidden="true" ng-click="toggle()"></span>',
-    link: function link(scope){
-	    
-	    scope.valstr = scope.isFav ? scope.on : scope.off;
-
+    template: '<span class="glyphicon {{isFav ? on : off}}" aria-hidden="true" ng-click="toggle()"></span>',
+    link: function link(scope){	
 	    scope.toggle = function toggle(){
 	      scope.isFav = !scope.isFav;
-	      if(scope.isFav){
-	      	scope.valstr = scope.on;
-	      }
-	      else{
-	      	scope.valstr = scope.off;
-	      }
 	    };
   	}
   };
