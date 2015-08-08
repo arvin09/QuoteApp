@@ -3,7 +3,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-$font-size: 14px;
+$font-size: 16px;
 $line-height: 1.4;
 $lines-to-show: 3;
 
@@ -14,13 +14,18 @@ $lines-to-show: 3;
   padding: 0.2em 0;
 }
 
+.addBottom {
+   margin-bottom: 15px !important;   
+}
+
 body {
   padding: 0;
 }
 
 body,html {
   overflow: hidden;
-  height: 100%
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-vcenter {
@@ -61,6 +66,7 @@ body,html {
   width: 300px;
   right: -6px;
   left: inherit;
+  -webkit-overflow-scrolling: touch;
 
   h3{
     line-height: 25px !important;
@@ -213,7 +219,7 @@ form{
 
     .quote-menu{
       float:right;
-      //padding-right:10px;
+
       img{
         width : 20px;
         height: 20px;
@@ -227,17 +233,22 @@ form{
 
 .panel-body{
   display: block; /* Fallback for non-webkit */
-display: -webkit-box;
-max-width: 100%;
-height: 75px;//$font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
-margin: 0 auto;
-font-size: $font-size;
-line-height: $line-height;
--webkit-line-clamp: $lines-to-show;
--webkit-box-orient: vertical;
-overflow: hidden;
-text-overflow: ellipsis;
-  margin-bottom: 10px;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 80px;//$font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  
+}
+
+.panel{
+   border-radius:14px !important;
 }
 
 .modal-body-content{
@@ -248,19 +259,19 @@ text-overflow: ellipsis;
   }
 
   a{
-      text-align : left!important;
-      padding: 5px!important;
+    text-align : left!important;
+    padding: 5px!important;
+  }
+
+  .detail-modal {
+    font-size: 18px !important;
+    text-align: left !important;
   }
 }
 
-
-
 .zocial, a.zocial{
   width : 220px !important;
-  //padding-right:0 !important;
 }
-
-
 
 .navbar-toggle {
   float: left;
@@ -271,7 +282,7 @@ text-overflow: ellipsis;
  * --------------------------------------------------
  */
 
- .row-offcanvas {
+.row-offcanvas {
   position: relative;
   -webkit-transition: all .25s ease-out;
   -o-transition: all .25s ease-out;
@@ -288,27 +299,27 @@ text-overflow: ellipsis;
 
 .row-offcanvas-right
 .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
-  }
+  right: -50%; /* 6 columns */
+}
 
-  .row-offcanvas-left
-  .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
-  }
+.row-offcanvas-left
+.sidebar-offcanvas {
+  left: -50%; /* 6 columns */
+}
 
-  .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
-  }
+.row-offcanvas-right.active {
+  right: 50%; /* 6 columns */
+}
 
-  .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
-  }
+.row-offcanvas-left.active {
+  left: 50%; /* 6 columns */
+}
 
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 50%; /* 6 columns */
-  }
+.sidebar-offcanvas {
+  position: absolute;
+  top: 0;
+  width: 50%; /* 6 columns */
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

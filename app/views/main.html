@@ -1,7 +1,7 @@
-<div class="panel panel-default" ng-repeat= "quote in quotes | filter:{type : quoteType}"	>
+<div class="panel panel-default" ng-repeat= "quote in quotes | filter:{type : quoteType}">
 	<div class="container">
 		<div class="row">
-			<div class="panel-body" ng-click="showDetails(quote)" data-toggle="modal" data-target=".currentQuote-app-modal-sm">
+			<div ng-class="{addBottom:!user.login}" class="panel-body" ng-click="showDetails(quote)">
 				{{quote.desc}}
 			</div>
 		</div>
@@ -9,15 +9,17 @@
 	</div>
 </div>
 
-<div class="modal modal-vcenter fade currentQuote-app-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal modal-vcenter fade currentQuote-app-modal-sm " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
        <div class="modal-header" ng-if="user.login">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span> </h4>
+        <h4 class="modal-title" id="gridSystemModalLabel"><set-favourite is-fav="false" on="heart glyphicon-heart" off="heart-empty glyphicon-heart-empty"/></h4>
       </div>
       <div class="modal-body modal-body-content">
-        {{currentSelectedQuote.desc}}
+        <div class="detail-modal">
+          {{currentSelectedQuote.desc}}
+        </div>
       </div>
     </div>
   </div>
