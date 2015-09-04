@@ -33,7 +33,7 @@
                 <ul class="menu">
                   <li><a href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
                   <li data-toggle="modal" data-target=".bs-example-modal-sm" ng-if="!user.login"><a href="" ><span class="glyphicon glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
-                  <li ng-if="user.login"><a href="#/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>   Favourites</a></li>
+                  <li ng-if="user.login"><a href="#/page/favourite"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>   Favourites</a></li>
                   <li ng-if="user.login"><a href="#/page/addQuote"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AddQuote</a></li>
                   <li><a href="#/page/about"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a></li>
                   <li><a href="#/page/help"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help</a></li>
@@ -58,7 +58,7 @@
               </div>
             </div>
 
-            
+
             <div class="modal modal-vcenter fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
               <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -88,7 +88,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
-                </button> 
+                </button>
                 <!-- <span data-toggle="offcanvas" class="navbar-toggle glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> -->
               </div>
               <div class="col-xs-10 col-sm-12">
@@ -96,7 +96,7 @@
                 <!-- <div class="col-xs-3 col-sm-3"><img src="images/filter.png"></div> -->
                 <!-- Split button -->
                 <div class="col-xs-3 col-sm-3" >
-                 <div class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu" aria-haspopup="true" aria-expanded="false">
+                 <div class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu" aria-haspopup="true" aria-expanded="false" ng-show="showFilter">
                   <img src="images/filter.png" class="fliter-ico">
                 </div>
 
@@ -118,7 +118,7 @@
         <p>Copyright @ 2015</p>
       </div>
     </div>
-  </div>    
+  </div>
 </div>
 
 
@@ -134,7 +134,7 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
      </script> -->
-     
+
      <script src="https://apis.google.com/js/client.js"></script>
 
 
@@ -156,18 +156,19 @@
      <script src="scripts/app.js"></script>
      <script src="scripts/app-const.js"></script>
      <script src="scripts/services/social-config.js"></script>
-     <script src="scripts/services/fb-util.js"></script> 
-     <script src="scripts/services/gplus-util.js"></script> 
-     <script src="scripts/directives/star-rating.js"></script> 
-     <script src="scripts/directives/set-favourite.js"></script> 
+     <script src="scripts/services/fb-util.js"></script>
+     <script src="scripts/services/gplus-util.js"></script>
+     <script src="scripts/directives/star-rating.js"></script>
+     <script src="scripts/directives/set-favourite.js"></script>
      <script src="scripts/controllers/main.js"></script>
-     <script src="scripts/controllers/filter-menu.js"></script>    
+     <script src="scripts/controllers/filter-menu.js"></script>
      <script src="scripts/controllers/side-menu.js"></script>
      <script src="scripts/controllers/about.js"></script>
      <script src="scripts/controllers/help.js"></script>
      <script src="scripts/controllers/rating.js"></script>
      <script src="scripts/controllers/add-quote.js"></script>
-     <!-- endbuild -->  
+     <script src="scripts/controllers/favourite.js"></script>
+     <!-- endbuild -->
 
 
      <!-- endbuild -->
