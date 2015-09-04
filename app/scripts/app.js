@@ -49,11 +49,8 @@ App.config(function ($routeProvider) {
 });
 
 
-
-
-
-
 App.run(['$rootScope','$window','SocialConfig', function($rootScope,$window,SocilaConfig) {
+  var  isInit = true;
   angular.element('.quote-container').css({height: $($window).height() + 'px', 'background-color':'#0079BF'});
 
   angular.element('.footer').css({position: 'absolute'});
@@ -87,9 +84,15 @@ App.run(['$rootScope','$window','SocialConfig', function($rootScope,$window,Soci
     $rootScope.quotes[id].isfav = true;
   }
 
-
   $rootScope.$on('$routeChangeStart', function (event, next) {
     $rootScope.showFilter = next.$$route.filter;
+  });
+
+  $rootScope.$on('$routeChangeSuccess', function (event, next) {
+    if(!isInit) {
+      angular.element('.row-offcanvas').toggleClass('active');
+    }
+    isInit = false;
   });
 
 }]);
