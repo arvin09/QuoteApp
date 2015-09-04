@@ -12,7 +12,7 @@ app.directive('setFavourite', function(){
     restrict: 'E',
     replace: true,
     template: '<span class="glyphicon {{isFav ? on : off}}" aria-hidden="true" ng-click="toggle()"></span>',
-    link: function link(scope){	
+    link: function link(scope){
 
 	    scope.toggle = function toggle(){
 	      scope.isFav = !scope.isFav;
@@ -24,8 +24,8 @@ app.directive('setFavourite', function(){
         }else{
            localStorage.setItem('myfavourite',favourite);
         }
-        
-        scope.isFav ? favourite.push(scope.id) : favourite.splice(favourite.indexOf(scope.id),1);  
+
+        scope.isFav ? favourite.push(scope.id) : favourite.splice(favourite.indexOf(scope.id),1);
 
         localStorage.myfavourite = JSON.stringify(favourite);
 
