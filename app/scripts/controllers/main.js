@@ -8,7 +8,7 @@
  * Controller of the quoteApp
  */
 var app = angular.module('quoteApp');
- app.controller('MainCtrl', ['$scope','$routeParams',function($scope,$routeParams){
+ app.controller('MainCtrl', ['$scope','$routeParams','$rootScope',function($scope,$routeParams,$rootScope){
 
     $scope.quoteType = $routeParams.quoteType || '';
 
@@ -16,5 +16,6 @@ var app = angular.module('quoteApp');
       $scope.currentSelectedQuote = quote;
       angular.element('.currentQuote-app-modal-sm').modal('show');
     };
+
 
   }]);
