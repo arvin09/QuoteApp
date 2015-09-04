@@ -8,7 +8,7 @@
  * Controller of the quoteApp
  */
 var app = angular.module('quoteApp');
- app.controller('MainCtrl', ['$scope','$routeParams','$rootScope',function($scope,$routeParams,$rootScope){
+ app.controller('MainCtrl', ['$scope','$routeParams',function($scope,$routeParams){
 
     $scope.quoteType = $routeParams.quoteType || '';
 

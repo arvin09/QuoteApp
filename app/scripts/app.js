@@ -88,7 +88,7 @@ App.run(['$rootScope','$window','SocialConfig', function($rootScope,$window,Soci
     $rootScope.showFilter = next.$$route.filter;
   });
 
-  $rootScope.$on('$routeChangeSuccess', function (event, next) {
+  $rootScope.$on('$routeChangeSuccess', function () {
     if(!isInit) {
       angular.element('.row-offcanvas').toggleClass('active');
     }
