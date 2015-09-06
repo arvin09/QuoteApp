@@ -88,12 +88,10 @@ App.run(['$rootScope','$window','SocialConfig', function($rootScope,$window,Soci
     $rootScope.showFilter = next.$$route.filter;
   });
 
-  $rootScope.$on('$routeChangeSuccess', function () {
-    if(!isInit) {
-      angular.element('.row-offcanvas').toggleClass('active');
-    }
-    isInit = false;
-  });
+  $rootScope.closeSideMenu = function(){
+    angular.element('.row-offcanvas').removeClass('active');
+  };
+
 
 }]);
 

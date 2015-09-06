@@ -31,15 +31,15 @@
               </div>
               <div class="menu-container" >
                 <ul class="menu">
-                  <li><a href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-                  <li data-toggle="modal" data-target=".bs-example-modal-sm" ng-if="!user.login"><a href="" ><span class="glyphicon glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
-                  <li ng-if="user.login"><a href="#/page/favourite"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>   Favourites</a></li>
-                  <li ng-if="user.login"><a href="#/page/addQuote"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AddQuote</a></li>
-                  <li><a href="#/page/about"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a></li>
-                  <li><a href="#/page/help"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help</a></li>
-                  <li><a href="#/page/about"> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li>
-                  <li data-toggle="modal" data-target=".rate-app-modal-sm"><a href=""><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Rate App</a></li>
-                  <li ng-if="user.login"><a href="#/" ng-click="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log out</a></li>
+                  <li ng-click="closeSideMenu()"><a href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                  <li ng-click="closeSideMenu()" data-toggle="modal" data-target=".bs-example-modal-sm" ng-if="!user.login"><a href="" ><span class="glyphicon glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
+                  <li ng-click="closeSideMenu()"ng-if="user.login"><a href="#/page/favourite"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>   Favourites</a></li>
+                  <li ng-click="closeSideMenu()"ng-if="user.login"><a href="#/page/addQuote"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AddQuote</a></li>
+                  <li ng-click="closeSideMenu()"><a href="#/page/about"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a></li>
+                  <li ng-click="closeSideMenu()"><a href="#/page/help"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help</a></li>
+                  <li ng-click="closeSideMenu()"><a href="#/page/about"> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li>
+                  <li ng-click="closeSideMenu()"data-toggle="modal" data-target=".rate-app-modal-sm"><a href=""><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Rate App</a></li>
+                  <li ng-click="closeSideMenu()"ng-if="user.login"><a href="#/" ng-click="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log out</a></li>
                 </ul>
               </div>
 
